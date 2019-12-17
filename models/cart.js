@@ -1,20 +1,21 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose')
 
 var CartSchema = mongoose.Schema({
-    userCart: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'user'
-    },
-    productCart: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'user'
-    },
-    qtyCart: {
-        type: String,
-        required: true
-    }
-}, {
-    timestamps: true
+	userCart: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'user'
+	},
+	productCart: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'products'
+	},
+	qtyCart: {
+		type: String,
+		required: true
+	}
+},
+{
+	timestamps: true
 })
 
-var Cart = module.exports = mongoose.model('carts', CartSchema);
+var Cart = module.exports = mongoose.model('carts', CartSchema) 
